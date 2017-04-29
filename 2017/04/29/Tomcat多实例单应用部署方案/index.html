@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="tomcat," />
 
 
 
@@ -92,12 +92,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="落枫寒博客">
-<meta property="og:url" content="http://vibrancy.cn/index.html">
+<meta name="description" content="Tomcat部署的场景分析tomcat部署需求可以分为 单实例单应用  如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。  单实例多应用  是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。  多实例单应用  各个tomc">
+<meta name="keywords" content="tomcat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tomcat多实例单应用部署方案">
+<meta property="og:url" content="http://vibrancy.cn/2017/04/29/Tomcat多实例单应用部署方案/index.html">
 <meta property="og:site_name" content="落枫寒博客">
+<meta property="og:description" content="Tomcat部署的场景分析tomcat部署需求可以分为 单实例单应用  如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。  单实例多应用  是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。  多实例单应用  各个tomc">
+<meta property="og:updated_time" content="2017-04-29T03:02:49.134Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="落枫寒博客">
+<meta name="twitter:title" content="Tomcat多实例单应用部署方案">
+<meta name="twitter:description" content="Tomcat部署的场景分析tomcat部署需求可以分为 单实例单应用  如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。  单实例多应用  是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。  多实例单应用  各个tomc">
 
 
 
@@ -125,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://vibrancy.cn/"/>
+  <link rel="canonical" href="http://vibrancy.cn/2017/04/29/Tomcat多实例单应用部署方案/"/>
 
 
 
 
 
-  <title>落枫寒博客</title>
+  <title>Tomcat多实例单应用部署方案 | 落枫寒博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -156,9 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -261,9 +264,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -293,10 +296,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/29/Tomcat多实例单应用部署方案/" itemprop="url">
-                  Tomcat多实例单应用部署方案
-                </a>
+                Tomcat多实例单应用部署方案
               
             
           </h1>
@@ -368,9 +368,7 @@
       
 
       
-        
-          
-            <h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="tomcat部署需求可以分为"><a href="#tomcat部署需求可以分为" class="headerlink" title="tomcat部署需求可以分为"></a>tomcat部署需求可以分为</h3><ol>
+        <h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="tomcat部署需求可以分为"><a href="#tomcat部署需求可以分为" class="headerlink" title="tomcat部署需求可以分为"></a>tomcat部署需求可以分为</h3><ol>
 <li><p><strong>单实例单应用</strong></p>
 <p> 如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。</p>
 </li>
@@ -451,42 +449,56 @@
 <li><a href="http://xafc2370.iteye.com/blog/1683187" target="_blank" rel="external">一个tomcat部署多个应用实例总结</a></li>
 </ul>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/tomcat/" rel="tag"># tomcat</a>
+          
+        </div>
+      
+
+      
+        
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -494,6 +506,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -513,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -583,6 +608,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat部署的场景分析"><span class="nav-number">1.</span> <span class="nav-text">Tomcat部署的场景分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat部署需求可以分为"><span class="nav-number">1.1.</span> <span class="nav-text">tomcat部署需求可以分为</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows服务器下多实例单应用设置流程"><span class="nav-number">2.</span> <span class="nav-text">Windows服务器下多实例单应用设置流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分离目录"><span class="nav-number">2.1.</span> <span class="nav-text">分离目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改环境变量"><span class="nav-number">2.2.</span> <span class="nav-text">修改环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改server-xml"><span class="nav-number">2.3.</span> <span class="nav-text">修改server.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改启动和停止脚本"><span class="nav-number">2.4.</span> <span class="nav-text">修改启动和停止脚本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动tomcats"><span class="nav-number">3.</span> <span class="nav-text">启动tomcats</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -696,6 +737,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 

@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2017/04/29/hello-world/</loc>
+    <loc>http://vibrancy.cn/2017/04/29/Tomcat%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88/</loc>
     
-    <lastmod>2017-04-28T23:28:39.280Z</lastmod>
+    <lastmod>2017-04-29T03:02:49.134Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://vibrancy.cn/archives/index.html</loc>
+    
+    <lastmod>2017-04-29T02:19:33.383Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://vibrancy.cn/about/index.html</loc>
+    
+    <lastmod>2017-01-16T15:24:29.826Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://vibrancy.cn/tags/index.html</loc>
+    
+    <lastmod>2017-01-16T15:23:17.675Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://vibrancy.cn/categories/index.html</loc>
+    
+    <lastmod>2017-01-16T15:22:19.052Z</lastmod>
     
   </url>
   

@@ -1,44 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>落枫寒博客</title>
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-04-28T23:28:39.280Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://vibrancy.cn/"/>
+  <updated>2017-04-29T03:02:49.134Z</updated>
+  <id>http://vibrancy.cn/</id>
   
   <author>
-    <name>John Doe</name>
-    
+    <name>落枫寒</name>
+    <email>luofenghan_cwc@163.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/04/29/hello-world/"/>
-    <id>http://yoursite.com/2017/04/29/hello-world/</id>
-    <published>2017-04-28T23:28:39.280Z</published>
-    <updated>2017-04-28T23:28:39.280Z</updated>
+    <title>Tomcat多实例单应用部署方案</title>
+    <link href="http://vibrancy.cn/2017/04/29/Tomcat%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88/"/>
+    <id>http://vibrancy.cn/2017/04/29/Tomcat多实例单应用部署方案/</id>
+    <published>2017-04-29T02:20:53.000Z</published>
+    <updated>2017-04-29T03:02:49.134Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="tomcat部署需求可以分为"><a href="#tomcat部署需求可以分为" class="headerlink" title="tomcat部署需求可以分为"></a>tomcat部署需求可以分为</h3><ol>
+<li><p><strong>单实例单应用</strong></p>
+<p> 如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。</p>
+</li>
+<li><p><strong>单实例多应用</strong></p>
+<p> 是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。</p>
+</li>
+<li><p><strong>多实例单应用</strong></p>
+<p> 各个tomcat都运行同一个应用程序，对应地需要修改不同的监听端口，这种方式通常会和apache httpd或者nginx整合使用，做一些负载均衡的处理。</p>
+</li>
+<li><p><strong>多实例多应用</strong></p>
+<p> 相当于第一种场景的复数形式，除了修改不同的监听端口，没有本质区别。</p>
+</li>
+</ol>
+<h2 id="Windows服务器下多实例单应用设置流程"><a href="#Windows服务器下多实例单应用设置流程" class="headerlink" title="Windows服务器下多实例单应用设置流程"></a>Windows服务器下多实例单应用设置流程</h2><h3 id="分离目录"><a href="#分离目录" class="headerlink" title="分离目录"></a>分离目录</h3><ol>
+<li><p>刚解压出来的tomcat目录结构</p>
+<ul>
+<li>bin：主要存放脚本文件，例如比较常用的windows和linux系统中启动和关闭脚本</li>
+<li>conf：主要存放配置文件，其中最重要的两个配置文件是server.xml和web.xml</li>
+<li>lib：主要存放tomcat运行所依赖的包</li>
+<li>logs：主要存放运行时产生的日志文件，例如catalina.{date}.log等</li>
+<li>temp：存放tomcat运行时产生的临时文件，例如开启了hibernate缓存的应用程序，会在该目录下生成一些文件</li>
+<li>webapps：部署web应用程序的默认目录</li>
+<li>work：主要存放由JSP文件生成的servlet（java文件以及最终编译生成的class文件）</li>
+</ul>
+</li>
+<li><p>将解压出来的tomcat文件拆分出的目录结构如下所示：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">F:/DevLibs/Tomcat</div><div class="line">├─applications</div><div class="line">│  ├─backend  # 主要部署后端模块代码</div><div class="line">│  │  │  shutdown.bat</div><div class="line">│  │  │  startup.bat</div><div class="line">│  │  ├─conf</div><div class="line">│  │  ├─logs</div><div class="line">│  │  ├─temp</div><div class="line">│  │  ├─webapps   </div><div class="line">│  │  └─work</div><div class="line">│  └─officals-website # 主要部署前端代码，如官方网站</div><div class="line">│     │  shutdown.bat</div><div class="line">│     │  startup.bat</div><div class="line">│     ├─conf</div><div class="line">│     ├─logs</div><div class="line">│     ├─temp</div><div class="line">│     ├─webapps</div><div class="line">│     └─work</div><div class="line">├─bin</div><div class="line">└─lib</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="修改环境变量"><a href="#修改环境变量" class="headerlink" title="修改环境变量"></a>修改环境变量</h3><ol>
+<li><p>环境变量说明</p>
+<ul>
+<li>CATALINA_HOME：即指向<strong>Tomcat安装路径</strong>的系统变量</li>
+<li><p>CATALINA_BASE：即指向<strong>活跃配置路径</strong>的系统变量</p>
+<p>通过设置这两个变量，就可以将tomcat的<strong>安装目录和工作目录</strong>分离，从而<strong>实现tomcat多实例的部署</strong>。</p>
+</li>
+</ul>
+</li>
+<li><p>环境变量设置</p>
+<ul>
+<li>新建变量名：<code>CATALINA_HOME</code>，变量值：<code>F:/DevLibs/Tomcat</code></li>
+<li>不需要增加<code>CATALINA_BASE</code>，该变量在脚本中动态设置。</li>
+<li>打开PATH，添加变量值：<code>%CATALINA_HOME%\lib;%CATALINA_HOME%\bin</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="修改server-xml"><a href="#修改server-xml" class="headerlink" title="修改server.xml"></a>修改server.xml</h3><ol>
+<li>修改官方网站（officals-website）web应用的server.xml配置（<strong>端口号8081</strong>）。<ul>
+<li>将第22行的<code>&lt;Server port=&quot;8005&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</code> 修改为 <code>&lt;Server port=&quot;8015&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</code></li>
+<li>将第69行的<code>&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</code> 修改为 <code>&lt;Connector port=&quot;8081&quot; protocol=&quot;HTTP/1.1&quot;</code></li>
+<li>将第91行的<code>&lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code>修改为<code>&lt;Connector port=&quot;8019&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code></li>
+<li>将第123行的<code>&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</code>修改为<code>&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;false&quot;&gt;</code></li>
+</ul>
+</li>
+<li>修改后端（backend）web应用的server.xml配置（<strong>端口号8082</strong>）。<ul>
+<li>将第22行的<code>&lt;Server port=&quot;8005&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</code> 修改为 <code>&lt;Server port=&quot;8025&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</code></li>
+<li>将第69行的<code>&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</code> 修改为 <code>&lt;Connector port=&quot;8082&quot; protocol=&quot;HTTP/1.1&quot;</code></li>
+<li>将第91行的<code>&lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code>修改为<code>&lt;Connector port=&quot;8029&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code></li>
+<li>将第123行的<code>&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</code>修改为<code>&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;false&quot;&gt;</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="修改启动和停止脚本"><a href="#修改启动和停止脚本" class="headerlink" title="修改启动和停止脚本"></a>修改启动和停止脚本</h3><ol>
+<li>将初始tomcat的bin目录下的<code>startup.bat</code> 和<code>shutdown.bat</code> 这两个脚本分别拷贝到<code>backend</code> 和 <code>offical-website</code> 目录下</li>
+<li><p>编辑<code>startup.bat</code>脚本，增加一行语句，用于设置<code>CATALINA_BASE</code>变量。（backend和offical-website需要同时修改）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">setlocal</div><div class="line"></div><div class="line">rem Guess CATALINA_HOME if not defined</div><div class="line">set &quot;CURRENT_DIR=%cd%&quot;</div><div class="line">## 在这里将CATALINA_BASE 设置为脚本所在目录</div><div class="line">set &quot;CATALINA_BASE=%cd%&quot; </div><div class="line">if not &quot;%CATALINA_HOME%&quot; == &quot;&quot; goto gotHome</div><div class="line">set &quot;CATALINA_HOME=%CURRENT_DIR%&quot;</div><div class="line">if exist &quot;%CATALINA_HOME%\bin\catalina.bat&quot; goto okHome</div><div class="line">cd ..</div><div class="line">set &quot;CATALINA_HOME=%cd%&quot;</div><div class="line">cd &quot;%CURRENT_DIR%&quot;</div><div class="line">:gotHome</div></pre></td></tr></table></figure>
+</li>
+<li><p>编辑shutdown.bat脚本，增加一行语句，用于设置<code>CATALINA_BASE</code>变量。（backend和offical-website需要同时修改）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">setlocal</div><div class="line"></div><div class="line">rem Guess CATALINA_HOME if not defined</div><div class="line">set &quot;CURRENT_DIR=%cd%&quot;</div><div class="line">## 在这里将CATALINA_BASE 设置为脚本所在目录</div><div class="line">set &quot;CATALINA_BASE=%cd%&quot;</div><div class="line">if not &quot;%CATALINA_HOME%&quot; == &quot;&quot; goto gotHome</div><div class="line">set &quot;CATALINA_HOME=%CURRENT_DIR%&quot;</div><div class="line">if exist &quot;%CATALINA_HOME%\bin\catalina.bat&quot; goto okHome</div><div class="line">cd ..</div><div class="line">set &quot;CATALINA_HOME=%cd%&quot;</div><div class="line">cd &quot;%CURRENT_DIR%&quot;</div><div class="line">:gotHome</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="启动tomcats"><a href="#启动tomcats" class="headerlink" title="启动tomcats"></a>启动tomcats</h2><ol>
+<li>分别在backend和officals-website目录，用Dos执行startup.bat脚本。</li>
+<li>在浏览器输入loalhost:8081和loalhost:8082就可以访问tomcat管理页面了。</li>
+</ol>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="http://blog.jobbole.com/109347/" target="_blank" rel="external">Tomcat多实例单应用部署方案</a></li>
+<li><a href="http://xafc2370.iteye.com/blog/1683187" target="_blank" rel="external">一个tomcat部署多个应用实例总结</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;h2 id=&quot;Tomcat部署的场景分析&quot;&gt;&lt;a href=&quot;#Tomcat部署的场景分析&quot; class=&quot;headerlink&quot; title=&quot;Tomcat部署的场景分析&quot;&gt;&lt;/a&gt;Tomcat部署的场景分析&lt;/h2&gt;&lt;h3 id=&quot;tomcat部署需求可以分为&quot;&gt;&lt;a hr
     
     </summary>
     
+      <category term="Tomcat" scheme="http://vibrancy.cn/categories/Tomcat/"/>
+    
+    
+      <category term="tomcat" scheme="http://vibrancy.cn/tags/tomcat/"/>
     
   </entry>
   
