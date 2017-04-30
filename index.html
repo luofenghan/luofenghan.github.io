@@ -370,7 +370,8 @@
 
       
         
-          <h2 id="增量更新的原理"><a href="#增量更新的原理" class="headerlink" title="增量更新的原理"></a>增量更新的原理</h2><p>其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载更新部分就可以，而更新部分可能只有3、4M，可以很大程度上减少流量的损失。<br>在用户下载了差分包之后，需要在手机端将他们组合起来。可以参考的做法是先将手机端的旧版本软件(多半在/data/下)，复制到SD卡或者cache中，将它们和之前的差分patch进行组合，得到一个新版本的apk应用，如果不出意外的话，这个生成的apk和你之前做差分的apk是一致的。</p>
+          <h2 id="增量更新的原理"><a href="#增量更新的原理" class="headerlink" title="增量更新的原理"></a>增量更新的原理</h2><p>其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载更新部分就可以，而更新部分可能只有3、4M，可以很大程度上减少流量的损失。</p>
+<p>在用户下载了差分包之后，需要在手机端将他们组合起来。可以参考的做法是先将手机端的旧版本软件(多半在/data/下)，复制到SD卡或者cache中，将它们和之前的差分patch进行组合，得到一个新版本的apk应用，如果不出意外的话，这个生成的apk和你之前做差分的apk是一致的。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/30/Android增量更新：服务器篇/#more" rel="contents">
@@ -517,8 +518,7 @@
       
         
           <h2 id="MQ的用途"><a href="#MQ的用途" class="headerlink" title="MQ的用途"></a>MQ的用途</h2><p>消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。</p>
-<p><img src="http://op87q3xru.bkt.clouddn.com/message%20queue.png" alt="mq"></p>
-<p>在互联网架构中，MQ是一种非常常见的上下游“<strong>逻辑解耦+物理解耦</strong>”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。</p>
+<p>在互联网架构中，MQ是一种非常常见的上下游“<strong>逻辑解耦+物理解耦</strong>”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/30/到底什么时候该使用MQ/#more" rel="contents">
@@ -664,20 +664,7 @@
 
       
         
-          <h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="tomcat部署需求可以分为"><a href="#tomcat部署需求可以分为" class="headerlink" title="tomcat部署需求可以分为"></a>tomcat部署需求可以分为</h3><ol>
-<li><p><strong>单实例单应用</strong></p>
-<p> 如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。</p>
-</li>
-<li><p><strong>单实例多应用</strong></p>
-<p> 是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。</p>
-</li>
-<li><p><strong>多实例单应用</strong></p>
-<p> 各个tomcat都运行同一个应用程序，对应地需要修改不同的监听端口，这种方式通常会和apache httpd或者nginx整合使用，做一些负载均衡的处理。</p>
-</li>
-<li><p><strong>多实例多应用</strong></p>
-<p> 相当于第一种场景的复数形式，除了修改不同的监听端口，没有本质区别。</p>
-</li>
-</ol>
+          <h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="单实例单应用"><a href="#单实例单应用" class="headerlink" title="单实例单应用"></a>单实例单应用</h3><p>如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/29/Tomcat多实例单应用部署方案/#more" rel="contents">

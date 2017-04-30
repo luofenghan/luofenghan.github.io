@@ -134,7 +134,7 @@
 <meta property="og:image" content="http://i.imgur.com/70bdDfk.png">
 <meta property="og:image" content="http://i.imgur.com/oOEXgk0.png">
 <meta property="og:image" content="http://i.imgur.com/ZhwlIHh.png">
-<meta property="og:updated_time" content="2017-04-30T14:14:52.660Z">
+<meta property="og:updated_time" content="2017-04-30T23:08:03.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android增量更新：服务器篇">
 <meta name="twitter:description" content="增量更新的原理其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载">
@@ -405,8 +405,8 @@
       
 
       
-        <h2 id="增量更新的原理"><a href="#增量更新的原理" class="headerlink" title="增量更新的原理"></a>增量更新的原理</h2><p>其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载更新部分就可以，而更新部分可能只有3、4M，可以很大程度上减少流量的损失。<br>在用户下载了差分包之后，需要在手机端将他们组合起来。可以参考的做法是先将手机端的旧版本软件(多半在/data/下)，复制到SD卡或者cache中，将它们和之前的差分patch进行组合，得到一个新版本的apk应用，如果不出意外的话，这个生成的apk和你之前做差分的apk是一致的。</p>
-<a id="more"></a>
+        <h2 id="增量更新的原理"><a href="#增量更新的原理" class="headerlink" title="增量更新的原理"></a>增量更新的原理</h2><p>其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载更新部分就可以，而更新部分可能只有3、4M，可以很大程度上减少流量的损失。</p>
+<p>在用户下载了差分包之后，需要在手机端将他们组合起来。可以参考的做法是先将手机端的旧版本软件(多半在/data/下)，复制到SD卡或者cache中，将它们和之前的差分patch进行组合，得到一个新版本的apk应用，如果不出意外的话，这个生成的apk和你之前做差分的apk是一致的。<br><a id="more"></a></p>
 <h2 id="增量更新实现"><a href="#增量更新实现" class="headerlink" title="增量更新实现"></a>增量更新实现</h2><h3 id="使用的工具"><a href="#使用的工具" class="headerlink" title="使用的工具"></a>使用的工具</h3><p>使用开源的二进制比较工具<a href="http://www.daemonology.net/bsdiff/" target="_blank" rel="external">bsdiff</a></p>
 <p><img src="http://i.imgur.com/RBOUfG0.png" alt=""></p>
 <p>及其依赖的<a href="http://www.bzip.org/downloads.html" target="_blank" rel="external">bzip2</a></p>

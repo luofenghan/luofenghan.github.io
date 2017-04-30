@@ -92,19 +92,19 @@
 
 
 
-<meta name="description" content="MQ的用途消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。  在互联网架构中，MQ是一种非常常见的上下游“逻辑解耦+物理解耦”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。">
+<meta name="description" content="MQ的用途消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。 在互联网架构中，MQ是一种非常常见的上下游“逻辑解耦+物理解耦”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。">
 <meta name="keywords" content="架构,消息队列">
 <meta property="og:type" content="article">
 <meta property="og:title" content="到底什么时候该使用MQ">
 <meta property="og:url" content="http://luofenghan.github.io/2017/04/30/到底什么时候该使用MQ/index.html">
 <meta property="og:site_name" content="心之所至、意之使然">
-<meta property="og:description" content="MQ的用途消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。  在互联网架构中，MQ是一种非常常见的上下游“逻辑解耦+物理解耦”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。">
+<meta property="og:description" content="MQ的用途消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。 在互联网架构中，MQ是一种非常常见的上下游“逻辑解耦+物理解耦”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。">
 <meta property="og:image" content="http://op87q3xru.bkt.clouddn.com/message%20queue.png">
 <meta property="og:image" content="http://op87q3xru.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E7%BB%93%E6%9E%9C%E9%80%9A%E7%9F%A5.png">
-<meta property="og:updated_time" content="2017-04-30T14:13:03.807Z">
+<meta property="og:updated_time" content="2017-04-30T23:08:29.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="到底什么时候该使用MQ">
-<meta name="twitter:description" content="MQ的用途消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。  在互联网架构中，MQ是一种非常常见的上下游“逻辑解耦+物理解耦”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。">
+<meta name="twitter:description" content="MQ的用途消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。 在互联网架构中，MQ是一种非常常见的上下游“逻辑解耦+物理解耦”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。">
 <meta name="twitter:image" content="http://op87q3xru.bkt.clouddn.com/message%20queue.png">
 
 
@@ -373,9 +373,8 @@
 
       
         <h2 id="MQ的用途"><a href="#MQ的用途" class="headerlink" title="MQ的用途"></a>MQ的用途</h2><p>消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。</p>
+<p>在互联网架构中，MQ是一种非常常见的上下游“<strong>逻辑解耦+物理解耦</strong>”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。<br><a id="more"></a></p>
 <p><img src="http://op87q3xru.bkt.clouddn.com/message%20queue.png" alt="mq"></p>
-<p>在互联网架构中，MQ是一种非常常见的上下游“<strong>逻辑解耦+物理解耦</strong>”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。</p>
-<a id="more"></a>
 <h2 id="不使用MQ的情况"><a href="#不使用MQ的情况" class="headerlink" title="不使用MQ的情况"></a>不使用MQ的情况</h2><p>MQ作为互联网分层架构中的解耦利器，那为什么不是所有通讯都使用MQ呢？因为，调用与被调用的关系，是无法被MQ取代的。<strong>调用方实时依赖执行结果的业务场景，请使用调用，而不是MQ</strong>。</p>
 <h3 id="MQ的缺陷"><a href="#MQ的缺陷" class="headerlink" title="MQ的缺陷"></a>MQ的缺陷</h3><ul>
 <li>系统更复杂，多了一个MQ组件；</li>

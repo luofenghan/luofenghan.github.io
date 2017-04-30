@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="Tomcat部署的场景分析tomcat部署需求可以分为 单实例单应用  如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。  单实例多应用  是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。  多实例单应用  各个tomc">
+<meta name="description" content="Tomcat部署的场景分析单实例单应用如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。">
 <meta name="keywords" content="tomcat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tomcat多实例单应用部署方案">
 <meta property="og:url" content="http://luofenghan.github.io/2017/04/29/Tomcat多实例单应用部署方案/index.html">
 <meta property="og:site_name" content="心之所至、意之使然">
-<meta property="og:description" content="Tomcat部署的场景分析tomcat部署需求可以分为 单实例单应用  如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。  单实例多应用  是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。  多实例单应用  各个tomc">
-<meta property="og:updated_time" content="2017-04-30T13:50:36.143Z">
+<meta property="og:description" content="Tomcat部署的场景分析单实例单应用如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。">
+<meta property="og:updated_time" content="2017-04-30T23:10:26.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat多实例单应用部署方案">
-<meta name="twitter:description" content="Tomcat部署的场景分析tomcat部署需求可以分为 单实例单应用  如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。  单实例多应用  是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。  多实例单应用  各个tomc">
+<meta name="twitter:description" content="Tomcat部署的场景分析单实例单应用如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。">
 
 
 
@@ -369,21 +369,10 @@
       
 
       
-        <h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="tomcat部署需求可以分为"><a href="#tomcat部署需求可以分为" class="headerlink" title="tomcat部署需求可以分为"></a>tomcat部署需求可以分为</h3><ol>
-<li><p><strong>单实例单应用</strong></p>
-<p> 如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。</p>
-</li>
-<li><p><strong>单实例多应用</strong></p>
-<p> 是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。</p>
-</li>
-<li><p><strong>多实例单应用</strong></p>
-<p> 各个tomcat都运行同一个应用程序，对应地需要修改不同的监听端口，这种方式通常会和apache httpd或者nginx整合使用，做一些负载均衡的处理。</p>
-</li>
-<li><p><strong>多实例多应用</strong></p>
-<p> 相当于第一种场景的复数形式，除了修改不同的监听端口，没有本质区别。</p>
-</li>
-</ol>
-<a id="more"></a>
+        <h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="单实例单应用"><a href="#单实例单应用" class="headerlink" title="单实例单应用"></a>单实例单应用</h3><p>如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。<br><a id="more"></a></p>
+<h3 id="单实例多应用"><a href="#单实例多应用" class="headerlink" title="单实例多应用"></a>单实例多应用</h3><p>是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。</p>
+<h3 id="多实例单应用"><a href="#多实例单应用" class="headerlink" title="多实例单应用"></a>多实例单应用</h3><p>各个tomcat都运行同一个应用程序，对应地需要修改不同的监听端口，这种方式通常会和apache httpd或者nginx整合使用，做一些负载均衡的处理。</p>
+<h3 id="多实例多应用"><a href="#多实例多应用" class="headerlink" title="多实例多应用"></a>多实例多应用</h3><p>相当于第一种场景的复数形式，除了修改不同的监听端口，没有本质区别。</p>
 <h2 id="Windows服务器下多实例单应用设置流程"><a href="#Windows服务器下多实例单应用设置流程" class="headerlink" title="Windows服务器下多实例单应用设置流程"></a>Windows服务器下多实例单应用设置流程</h2><h3 id="分离目录"><a href="#分离目录" class="headerlink" title="分离目录"></a>分离目录</h3><ol>
 <li><p>刚解压出来的tomcat目录结构</p>
 <ul>
@@ -636,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat部署的场景分析"><span class="nav-number">1.</span> <span class="nav-text">Tomcat部署的场景分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat部署需求可以分为"><span class="nav-number">1.1.</span> <span class="nav-text">tomcat部署需求可以分为</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows服务器下多实例单应用设置流程"><span class="nav-number">2.</span> <span class="nav-text">Windows服务器下多实例单应用设置流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分离目录"><span class="nav-number">2.1.</span> <span class="nav-text">分离目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改环境变量"><span class="nav-number">2.2.</span> <span class="nav-text">修改环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改server-xml"><span class="nav-number">2.3.</span> <span class="nav-text">修改server.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改启动和停止脚本"><span class="nav-number">2.4.</span> <span class="nav-text">修改启动和停止脚本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动tomcats"><span class="nav-number">3.</span> <span class="nav-text">启动tomcats</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat部署的场景分析"><span class="nav-number">1.</span> <span class="nav-text">Tomcat部署的场景分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单实例单应用"><span class="nav-number">1.1.</span> <span class="nav-text">单实例单应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单实例多应用"><span class="nav-number">1.2.</span> <span class="nav-text">单实例多应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多实例单应用"><span class="nav-number">1.3.</span> <span class="nav-text">多实例单应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多实例多应用"><span class="nav-number">1.4.</span> <span class="nav-text">多实例多应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows服务器下多实例单应用设置流程"><span class="nav-number">2.</span> <span class="nav-text">Windows服务器下多实例单应用设置流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分离目录"><span class="nav-number">2.1.</span> <span class="nav-text">分离目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改环境变量"><span class="nav-number">2.2.</span> <span class="nav-text">修改环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改server-xml"><span class="nav-number">2.3.</span> <span class="nav-text">修改server.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改启动和停止脚本"><span class="nav-number">2.4.</span> <span class="nav-text">修改启动和停止脚本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动tomcats"><span class="nav-number">3.</span> <span class="nav-text">启动tomcats</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
 
           </div>

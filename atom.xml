@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luofenghan.github.io/"/>
-  <updated>2017-04-30T14:14:52.660Z</updated>
+  <updated>2017-04-30T23:08:03.147Z</updated>
   <id>http://luofenghan.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://luofenghan.github.io/2017/04/30/Android%E5%A2%9E%E9%87%8F%E6%9B%B4%E6%96%B0%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/"/>
     <id>http://luofenghan.github.io/2017/04/30/Android增量更新：服务器篇/</id>
     <published>2017-04-30T13:40:21.000Z</published>
-    <updated>2017-04-30T14:14:52.660Z</updated>
+    <updated>2017-04-30T23:08:03.147Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="增量更新的原理"><a href="#增量更新的原理" class="headerlink" title="增量更新的原理"></a>增量更新的原理</h2><p>其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载更新部分就可以，而更新部分可能只有3、4M，可以很大程度上减少流量的损失。<br>在用户下载了差分包之后，需要在手机端将他们组合起来。可以参考的做法是先将手机端的旧版本软件(多半在/data/下)，复制到SD卡或者cache中，将它们和之前的差分patch进行组合，得到一个新版本的apk应用，如果不出意外的话，这个生成的apk和你之前做差分的apk是一致的。</p>
-<a id="more"></a>
+    <content type="html"><![CDATA[<h2 id="增量更新的原理"><a href="#增量更新的原理" class="headerlink" title="增量更新的原理"></a>增量更新的原理</h2><p>其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载更新部分就可以，而更新部分可能只有3、4M，可以很大程度上减少流量的损失。</p>
+<p>在用户下载了差分包之后，需要在手机端将他们组合起来。可以参考的做法是先将手机端的旧版本软件(多半在/data/下)，复制到SD卡或者cache中，将它们和之前的差分patch进行组合，得到一个新版本的apk应用，如果不出意外的话，这个生成的apk和你之前做差分的apk是一致的。<br><a id="more"></a></p>
 <h2 id="增量更新实现"><a href="#增量更新实现" class="headerlink" title="增量更新实现"></a>增量更新实现</h2><h3 id="使用的工具"><a href="#使用的工具" class="headerlink" title="使用的工具"></a>使用的工具</h3><p>使用开源的二进制比较工具<a href="http://www.daemonology.net/bsdiff/" target="_blank" rel="external">bsdiff</a></p>
 <p><img src="http://i.imgur.com/RBOUfG0.png" alt=""></p>
 <p>及其依赖的<a href="http://www.bzip.org/downloads.html" target="_blank" rel="external">bzip2</a></p>
@@ -120,7 +120,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;增量更新的原理&quot;&gt;&lt;a href=&quot;#增量更新的原理&quot; class=&quot;headerlink&quot; title=&quot;增量更新的原理&quot;&gt;&lt;/a&gt;增量更新的原理&lt;/h2&gt;&lt;p&gt;其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载更新部分就可以，而更新部分可能只有3、4M，可以很大程度上减少流量的损失。&lt;br&gt;在用户下载了差分包之后，需要在手机端将他们组合起来。可以参考的做法是先将手机端的旧版本软件(多半在/data/下)，复制到SD卡或者cache中，将它们和之前的差分patch进行组合，得到一个新版本的apk应用，如果不出意外的话，这个生成的apk和你之前做差分的apk是一致的。&lt;/p&gt;
+      &lt;h2 id=&quot;增量更新的原理&quot;&gt;&lt;a href=&quot;#增量更新的原理&quot; class=&quot;headerlink&quot; title=&quot;增量更新的原理&quot;&gt;&lt;/a&gt;增量更新的原理&lt;/h2&gt;&lt;p&gt;其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载更新部分就可以，而更新部分可能只有3、4M，可以很大程度上减少流量的损失。&lt;/p&gt;
+&lt;p&gt;在用户下载了差分包之后，需要在手机端将他们组合起来。可以参考的做法是先将手机端的旧版本软件(多半在/data/下)，复制到SD卡或者cache中，将它们和之前的差分patch进行组合，得到一个新版本的apk应用，如果不出意外的话，这个生成的apk和你之前做差分的apk是一致的。&lt;br&gt;
     
     </summary>
     
@@ -138,12 +139,11 @@
     <link href="http://luofenghan.github.io/2017/04/30/%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%AF%A5%E4%BD%BF%E7%94%A8MQ/"/>
     <id>http://luofenghan.github.io/2017/04/30/到底什么时候该使用MQ/</id>
     <published>2017-04-29T22:23:39.000Z</published>
-    <updated>2017-04-30T14:13:03.807Z</updated>
+    <updated>2017-04-30T23:08:29.954Z</updated>
     
     <content type="html"><![CDATA[<h2 id="MQ的用途"><a href="#MQ的用途" class="headerlink" title="MQ的用途"></a>MQ的用途</h2><p>消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。</p>
+<p>在互联网架构中，MQ是一种非常常见的上下游“<strong>逻辑解耦+物理解耦</strong>”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。<br><a id="more"></a></p>
 <p><img src="http://op87q3xru.bkt.clouddn.com/message%20queue.png" alt="mq"></p>
-<p>在互联网架构中，MQ是一种非常常见的上下游“<strong>逻辑解耦+物理解耦</strong>”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。</p>
-<a id="more"></a>
 <h2 id="不使用MQ的情况"><a href="#不使用MQ的情况" class="headerlink" title="不使用MQ的情况"></a>不使用MQ的情况</h2><p>MQ作为互联网分层架构中的解耦利器，那为什么不是所有通讯都使用MQ呢？因为，调用与被调用的关系，是无法被MQ取代的。<strong>调用方实时依赖执行结果的业务场景，请使用调用，而不是MQ</strong>。</p>
 <h3 id="MQ的缺陷"><a href="#MQ的缺陷" class="headerlink" title="MQ的缺陷"></a>MQ的缺陷</h3><ul>
 <li>系统更复杂，多了一个MQ组件；</li>
@@ -249,8 +249,7 @@
     <summary type="html">
     
       &lt;h2 id=&quot;MQ的用途&quot;&gt;&lt;a href=&quot;#MQ的用途&quot; class=&quot;headerlink&quot; title=&quot;MQ的用途&quot;&gt;&lt;/a&gt;MQ的用途&lt;/h2&gt;&lt;p&gt;消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://op87q3xru.bkt.clouddn.com/message%20queue.png&quot; alt=&quot;mq&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在互联网架构中，MQ是一种非常常见的上下游“&lt;strong&gt;逻辑解耦+物理解耦&lt;/strong&gt;”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。&lt;/p&gt;
+&lt;p&gt;在互联网架构中，MQ是一种非常常见的上下游“&lt;strong&gt;逻辑解耦+物理解耦&lt;/strong&gt;”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。&lt;br&gt;
     
     </summary>
     
@@ -268,23 +267,12 @@
     <link href="http://luofenghan.github.io/2017/04/29/Tomcat%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88/"/>
     <id>http://luofenghan.github.io/2017/04/29/Tomcat多实例单应用部署方案/</id>
     <published>2017-04-29T02:20:53.000Z</published>
-    <updated>2017-04-30T13:50:36.143Z</updated>
+    <updated>2017-04-30T23:10:26.309Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="tomcat部署需求可以分为"><a href="#tomcat部署需求可以分为" class="headerlink" title="tomcat部署需求可以分为"></a>tomcat部署需求可以分为</h3><ol>
-<li><p><strong>单实例单应用</strong></p>
-<p> 如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。</p>
-</li>
-<li><p><strong>单实例多应用</strong></p>
-<p> 是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。</p>
-</li>
-<li><p><strong>多实例单应用</strong></p>
-<p> 各个tomcat都运行同一个应用程序，对应地需要修改不同的监听端口，这种方式通常会和apache httpd或者nginx整合使用，做一些负载均衡的处理。</p>
-</li>
-<li><p><strong>多实例多应用</strong></p>
-<p> 相当于第一种场景的复数形式，除了修改不同的监听端口，没有本质区别。</p>
-</li>
-</ol>
-<a id="more"></a>
+    <content type="html"><![CDATA[<h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="单实例单应用"><a href="#单实例单应用" class="headerlink" title="单实例单应用"></a>单实例单应用</h3><p>如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。<br><a id="more"></a></p>
+<h3 id="单实例多应用"><a href="#单实例多应用" class="headerlink" title="单实例多应用"></a>单实例多应用</h3><p>是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。</p>
+<h3 id="多实例单应用"><a href="#多实例单应用" class="headerlink" title="多实例单应用"></a>多实例单应用</h3><p>各个tomcat都运行同一个应用程序，对应地需要修改不同的监听端口，这种方式通常会和apache httpd或者nginx整合使用，做一些负载均衡的处理。</p>
+<h3 id="多实例多应用"><a href="#多实例多应用" class="headerlink" title="多实例多应用"></a>多实例多应用</h3><p>相当于第一种场景的复数形式，除了修改不同的监听端口，没有本质区别。</p>
 <h2 id="Windows服务器下多实例单应用设置流程"><a href="#Windows服务器下多实例单应用设置流程" class="headerlink" title="Windows服务器下多实例单应用设置流程"></a>Windows服务器下多实例单应用设置流程</h2><h3 id="分离目录"><a href="#分离目录" class="headerlink" title="分离目录"></a>分离目录</h3><ol>
 <li><p>刚解压出来的tomcat目录结构</p>
 <ul>
@@ -355,20 +343,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Tomcat部署的场景分析&quot;&gt;&lt;a href=&quot;#Tomcat部署的场景分析&quot; class=&quot;headerlink&quot; title=&quot;Tomcat部署的场景分析&quot;&gt;&lt;/a&gt;Tomcat部署的场景分析&lt;/h2&gt;&lt;h3 id=&quot;tomcat部署需求可以分为&quot;&gt;&lt;a href=&quot;#tomcat部署需求可以分为&quot; class=&quot;headerlink&quot; title=&quot;tomcat部署需求可以分为&quot;&gt;&lt;/a&gt;tomcat部署需求可以分为&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;单实例单应用&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;单实例多应用&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 是把多个应用程序的war包放在同一个tomcat的webapps目录，这样一来，关闭和启动tomcat会影响所有项目。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;多实例单应用&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 各个tomcat都运行同一个应用程序，对应地需要修改不同的监听端口，这种方式通常会和apache httpd或者nginx整合使用，做一些负载均衡的处理。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;多实例多应用&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt; 相当于第一种场景的复数形式，除了修改不同的监听端口，没有本质区别。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+      &lt;h2 id=&quot;Tomcat部署的场景分析&quot;&gt;&lt;a href=&quot;#Tomcat部署的场景分析&quot; class=&quot;headerlink&quot; title=&quot;Tomcat部署的场景分析&quot;&gt;&lt;/a&gt;Tomcat部署的场景分析&lt;/h2&gt;&lt;h3 id=&quot;单实例单应用&quot;&gt;&lt;a href=&quot;#单实例单应用&quot; class=&quot;headerlink&quot; title=&quot;单实例单应用&quot;&gt;&lt;/a&gt;单实例单应用&lt;/h3&gt;&lt;p&gt;如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。&lt;br&gt;
     
     </summary>
     
