@@ -80,7 +80,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="落枫寒博客" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="心之所至、意之使然" type="application/atom+xml" />
 
 
 
@@ -93,11 +93,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="落枫寒博客">
-<meta property="og:url" content="http://vibrancy.cn/index.html">
-<meta property="og:site_name" content="落枫寒博客">
+<meta property="og:title" content="心之所至、意之使然">
+<meta property="og:url" content="http://luofenghan.github.io/index.html">
+<meta property="og:site_name" content="心之所至、意之使然">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="落枫寒博客">
+<meta name="twitter:title" content="心之所至、意之使然">
 
 
 
@@ -125,13 +125,14 @@
 
 
 
-  <link rel="canonical" href="http://vibrancy.cn/"/>
+  <link rel="canonical" href="http://luofenghan.github.io/"/>
 
 
 
 
 
-  <title>落枫寒博客</title>
+
+  <title>心之所至、意之使然</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -169,7 +170,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">落枫寒博客</span>
+        <span class="site-title">心之所至、意之使然</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -209,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            文章
           </a>
         </li>
       
@@ -272,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://vibrancy.cn/2017/04/29/Tomcat多实例单应用部署方案/">
+    <link itemprop="mainEntityOfPage" href="http://luofenghan.github.io/2017/04/30/Android增量更新：服务器篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="落枫寒">
@@ -281,7 +282,301 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="落枫寒博客">
+      <meta itemprop="name" content="心之所至、意之使然">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/30/Android增量更新：服务器篇/" itemprop="url">
+                  Android增量更新：服务器篇
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T21:40:21+08:00">
+                2017-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="增量更新的原理"><a href="#增量更新的原理" class="headerlink" title="增量更新的原理"></a>增量更新的原理</h2><p>其实增量升级的原理很简单，即首先将应用的旧版本Apk与新版本Apk做差分，得到更新的部分的补丁，例如旧版本的APK有5M，新版的有8M，更新的部分则可能只有3M左右(这里需要说明的是，得到的差分包大小并不是简单的相减，因为其实需要包含一些上下文相关的东西——有时候旧版本10M，新版本8M，得到的差分包可能有5M)，使用差分升级的好处显而易见，那么你不需要下载完整的8M文件，只需要下载更新部分就可以，而更新部分可能只有3、4M，可以很大程度上减少流量的损失。<br>在用户下载了差分包之后，需要在手机端将他们组合起来。可以参考的做法是先将手机端的旧版本软件(多半在/data/下)，复制到SD卡或者cache中，将它们和之前的差分patch进行组合，得到一个新版本的apk应用，如果不出意外的话，这个生成的apk和你之前做差分的apk是一致的。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/30/Android增量更新：服务器篇/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luofenghan.github.io/2017/04/30/到底什么时候该使用MQ/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="落枫寒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心之所至、意之使然">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/30/到底什么时候该使用MQ/" itemprop="url">
+                  到底什么时候该使用MQ
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T06:23:39+08:00">
+                2017-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/架构师/" itemprop="url" rel="index">
+                    <span itemprop="name">架构师</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="MQ的用途"><a href="#MQ的用途" class="headerlink" title="MQ的用途"></a>MQ的用途</h2><p>消息总线（Message Queue），后文称MQ，是一种跨进程的通信机制，用于上下游传递消息。</p>
+<p><img src="http://op87q3xru.bkt.clouddn.com/message%20queue.png" alt="mq"></p>
+<p>在互联网架构中，MQ是一种非常常见的上下游“<strong>逻辑解耦+物理解耦</strong>”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，逻辑上和物理上都不用依赖其他服务。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/30/到底什么时候该使用MQ/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luofenghan.github.io/2017/04/29/Tomcat多实例单应用部署方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="落枫寒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心之所至、意之使然">
     </span>
 
     
@@ -369,8 +664,7 @@
 
       
         
-          
-            <h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="tomcat部署需求可以分为"><a href="#tomcat部署需求可以分为" class="headerlink" title="tomcat部署需求可以分为"></a>tomcat部署需求可以分为</h3><ol>
+          <h2 id="Tomcat部署的场景分析"><a href="#Tomcat部署的场景分析" class="headerlink" title="Tomcat部署的场景分析"></a>Tomcat部署的场景分析</h2><h3 id="tomcat部署需求可以分为"><a href="#tomcat部署需求可以分为" class="headerlink" title="tomcat部署需求可以分为"></a>tomcat部署需求可以分为</h3><ol>
 <li><p><strong>单实例单应用</strong></p>
 <p> 如果不要求周期性地维护tomcat版本，一般的做法是把打好的war包丢到webapps目录下，然后执行startup.sh脚本，并且可以在浏览器里访问就行了。</p>
 </li>
@@ -384,74 +678,13 @@
 <p> 相当于第一种场景的复数形式，除了修改不同的监听端口，没有本质区别。</p>
 </li>
 </ol>
-<h2 id="Windows服务器下多实例单应用设置流程"><a href="#Windows服务器下多实例单应用设置流程" class="headerlink" title="Windows服务器下多实例单应用设置流程"></a>Windows服务器下多实例单应用设置流程</h2><h3 id="分离目录"><a href="#分离目录" class="headerlink" title="分离目录"></a>分离目录</h3><ol>
-<li><p>刚解压出来的tomcat目录结构</p>
-<ul>
-<li>bin：主要存放脚本文件，例如比较常用的windows和linux系统中启动和关闭脚本</li>
-<li>conf：主要存放配置文件，其中最重要的两个配置文件是server.xml和web.xml</li>
-<li>lib：主要存放tomcat运行所依赖的包</li>
-<li>logs：主要存放运行时产生的日志文件，例如catalina.{date}.log等</li>
-<li>temp：存放tomcat运行时产生的临时文件，例如开启了hibernate缓存的应用程序，会在该目录下生成一些文件</li>
-<li>webapps：部署web应用程序的默认目录</li>
-<li>work：主要存放由JSP文件生成的servlet（java文件以及最终编译生成的class文件）</li>
-</ul>
-</li>
-<li><p>将解压出来的tomcat文件拆分出的目录结构如下所示：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">F:/DevLibs/Tomcat</div><div class="line">├─applications</div><div class="line">│  ├─backend  # 主要部署后端模块代码</div><div class="line">│  │  │  shutdown.bat</div><div class="line">│  │  │  startup.bat</div><div class="line">│  │  ├─conf</div><div class="line">│  │  ├─logs</div><div class="line">│  │  ├─temp</div><div class="line">│  │  ├─webapps   </div><div class="line">│  │  └─work</div><div class="line">│  └─officals-website # 主要部署前端代码，如官方网站</div><div class="line">│     │  shutdown.bat</div><div class="line">│     │  startup.bat</div><div class="line">│     ├─conf</div><div class="line">│     ├─logs</div><div class="line">│     ├─temp</div><div class="line">│     ├─webapps</div><div class="line">│     └─work</div><div class="line">├─bin</div><div class="line">└─lib</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="修改环境变量"><a href="#修改环境变量" class="headerlink" title="修改环境变量"></a>修改环境变量</h3><ol>
-<li><p>环境变量说明</p>
-<ul>
-<li>CATALINA_HOME：即指向<strong>Tomcat安装路径</strong>的系统变量</li>
-<li><p>CATALINA_BASE：即指向<strong>活跃配置路径</strong>的系统变量</p>
-<p>通过设置这两个变量，就可以将tomcat的<strong>安装目录和工作目录</strong>分离，从而<strong>实现tomcat多实例的部署</strong>。</p>
-</li>
-</ul>
-</li>
-<li><p>环境变量设置</p>
-<ul>
-<li>新建变量名：<code>CATALINA_HOME</code>，变量值：<code>F:/DevLibs/Tomcat</code></li>
-<li>不需要增加<code>CATALINA_BASE</code>，该变量在脚本中动态设置。</li>
-<li>打开PATH，添加变量值：<code>%CATALINA_HOME%\lib;%CATALINA_HOME%\bin</code></li>
-</ul>
-</li>
-</ol>
-<h3 id="修改server-xml"><a href="#修改server-xml" class="headerlink" title="修改server.xml"></a>修改server.xml</h3><ol>
-<li>修改官方网站（officals-website）web应用的server.xml配置（<strong>端口号8081</strong>）。<ul>
-<li>将第22行的<code>&lt;Server port=&quot;8005&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</code> 修改为 <code>&lt;Server port=&quot;8015&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</code></li>
-<li>将第69行的<code>&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</code> 修改为 <code>&lt;Connector port=&quot;8081&quot; protocol=&quot;HTTP/1.1&quot;</code></li>
-<li>将第91行的<code>&lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code>修改为<code>&lt;Connector port=&quot;8019&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code></li>
-<li>将第123行的<code>&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</code>修改为<code>&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;false&quot;&gt;</code></li>
-</ul>
-</li>
-<li>修改后端（backend）web应用的server.xml配置（<strong>端口号8082</strong>）。<ul>
-<li>将第22行的<code>&lt;Server port=&quot;8005&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</code> 修改为 <code>&lt;Server port=&quot;8025&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</code></li>
-<li>将第69行的<code>&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</code> 修改为 <code>&lt;Connector port=&quot;8082&quot; protocol=&quot;HTTP/1.1&quot;</code></li>
-<li>将第91行的<code>&lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code>修改为<code>&lt;Connector port=&quot;8029&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code></li>
-<li>将第123行的<code>&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</code>修改为<code>&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;false&quot;&gt;</code></li>
-</ul>
-</li>
-</ol>
-<h3 id="修改启动和停止脚本"><a href="#修改启动和停止脚本" class="headerlink" title="修改启动和停止脚本"></a>修改启动和停止脚本</h3><ol>
-<li>将初始tomcat的bin目录下的<code>startup.bat</code> 和<code>shutdown.bat</code> 这两个脚本分别拷贝到<code>backend</code> 和 <code>offical-website</code> 目录下</li>
-<li><p>编辑<code>startup.bat</code>脚本，增加一行语句，用于设置<code>CATALINA_BASE</code>变量。（backend和offical-website需要同时修改）</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">setlocal</div><div class="line"></div><div class="line">rem Guess CATALINA_HOME if not defined</div><div class="line">set &quot;CURRENT_DIR=%cd%&quot;</div><div class="line">## 在这里将CATALINA_BASE 设置为脚本所在目录</div><div class="line">set &quot;CATALINA_BASE=%cd%&quot; </div><div class="line">if not &quot;%CATALINA_HOME%&quot; == &quot;&quot; goto gotHome</div><div class="line">set &quot;CATALINA_HOME=%CURRENT_DIR%&quot;</div><div class="line">if exist &quot;%CATALINA_HOME%\bin\catalina.bat&quot; goto okHome</div><div class="line">cd ..</div><div class="line">set &quot;CATALINA_HOME=%cd%&quot;</div><div class="line">cd &quot;%CURRENT_DIR%&quot;</div><div class="line">:gotHome</div></pre></td></tr></table></figure>
-</li>
-<li><p>编辑shutdown.bat脚本，增加一行语句，用于设置<code>CATALINA_BASE</code>变量。（backend和offical-website需要同时修改）</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">setlocal</div><div class="line"></div><div class="line">rem Guess CATALINA_HOME if not defined</div><div class="line">set &quot;CURRENT_DIR=%cd%&quot;</div><div class="line">## 在这里将CATALINA_BASE 设置为脚本所在目录</div><div class="line">set &quot;CATALINA_BASE=%cd%&quot;</div><div class="line">if not &quot;%CATALINA_HOME%&quot; == &quot;&quot; goto gotHome</div><div class="line">set &quot;CATALINA_HOME=%CURRENT_DIR%&quot;</div><div class="line">if exist &quot;%CATALINA_HOME%\bin\catalina.bat&quot; goto okHome</div><div class="line">cd ..</div><div class="line">set &quot;CATALINA_HOME=%cd%&quot;</div><div class="line">cd &quot;%CURRENT_DIR%&quot;</div><div class="line">:gotHome</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="启动tomcats"><a href="#启动tomcats" class="headerlink" title="启动tomcats"></a>启动tomcats</h2><ol>
-<li>分别在backend和officals-website目录，用Dos执行startup.bat脚本。</li>
-<li>在浏览器输入loalhost:8081和loalhost:8082就可以访问tomcat管理页面了。</li>
-</ol>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="http://blog.jobbole.com/109347/" target="_blank" rel="external">Tomcat多实例单应用部署方案</a></li>
-<li><a href="http://xafc2370.iteye.com/blog/1683187" target="_blank" rel="external">一个tomcat部署多个应用实例总结</a></li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/29/Tomcat多实例单应用部署方案/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -529,7 +762,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -540,7 +773,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -551,7 +784,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -601,26 +834,9 @@
   
   &copy; 
   <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">落枫寒</span>
+
+  <span class="author" itemprop="copyrightHolder"><a href='http://luofenghan.github.io'>落枫寒</a>&nbsp;版权所有</span>
 </div>
-
-<!--
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">落枫寒</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
-
--->
 
 
         
