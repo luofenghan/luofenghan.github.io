@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://luofenghan.github.io/"/>
+  <link href="http://www.vibrancy.cn/"/>
   <updated>2017-04-30T23:08:03.147Z</updated>
-  <id>http://luofenghan.github.io/</id>
+  <id>http://www.vibrancy.cn/</id>
   
   <author>
     <name>落枫寒</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Android增量更新：服务器篇</title>
-    <link href="http://luofenghan.github.io/2017/04/30/Android%E5%A2%9E%E9%87%8F%E6%9B%B4%E6%96%B0%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/"/>
-    <id>http://luofenghan.github.io/2017/04/30/Android增量更新：服务器篇/</id>
+    <link href="http://www.vibrancy.cn/2017/04/30/Android%E5%A2%9E%E9%87%8F%E6%9B%B4%E6%96%B0%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/"/>
+    <id>http://www.vibrancy.cn/2017/04/30/Android增量更新：服务器篇/</id>
     <published>2017-04-30T13:40:21.000Z</published>
     <updated>2017-04-30T23:08:03.147Z</updated>
     
@@ -125,19 +125,19 @@
     
     </summary>
     
-      <category term="Android" scheme="http://luofenghan.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://www.vibrancy.cn/categories/Android/"/>
     
     
-      <category term="增量更新" scheme="http://luofenghan.github.io/tags/%E5%A2%9E%E9%87%8F%E6%9B%B4%E6%96%B0/"/>
+      <category term="增量更新" scheme="http://www.vibrancy.cn/tags/%E5%A2%9E%E9%87%8F%E6%9B%B4%E6%96%B0/"/>
     
-      <category term="android" scheme="http://luofenghan.github.io/tags/android/"/>
+      <category term="android" scheme="http://www.vibrancy.cn/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>到底什么时候该使用MQ</title>
-    <link href="http://luofenghan.github.io/2017/04/30/%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%AF%A5%E4%BD%BF%E7%94%A8MQ/"/>
-    <id>http://luofenghan.github.io/2017/04/30/到底什么时候该使用MQ/</id>
+    <link href="http://www.vibrancy.cn/2017/04/30/%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%AF%A5%E4%BD%BF%E7%94%A8MQ/"/>
+    <id>http://www.vibrancy.cn/2017/04/30/到底什么时候该使用MQ/</id>
     <published>2017-04-29T22:23:39.000Z</published>
     <updated>2017-04-30T23:08:29.954Z</updated>
     
@@ -253,19 +253,19 @@
     
     </summary>
     
-      <category term="架构师" scheme="http://luofenghan.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88/"/>
+      <category term="架构师" scheme="http://www.vibrancy.cn/categories/%E6%9E%B6%E6%9E%84%E5%B8%88/"/>
     
     
-      <category term="架构" scheme="http://luofenghan.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://www.vibrancy.cn/tags/%E6%9E%B6%E6%9E%84/"/>
     
-      <category term="消息队列" scheme="http://luofenghan.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+      <category term="消息队列" scheme="http://www.vibrancy.cn/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
   <entry>
     <title>Tomcat多实例单应用部署方案</title>
-    <link href="http://luofenghan.github.io/2017/04/29/Tomcat%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88/"/>
-    <id>http://luofenghan.github.io/2017/04/29/Tomcat多实例单应用部署方案/</id>
+    <link href="http://www.vibrancy.cn/2017/04/29/Tomcat%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88/"/>
+    <id>http://www.vibrancy.cn/2017/04/29/Tomcat多实例单应用部署方案/</id>
     <published>2017-04-29T02:20:53.000Z</published>
     <updated>2017-04-30T23:10:26.309Z</updated>
     
@@ -347,10 +347,10 @@
     
     </summary>
     
-      <category term="Tomcat" scheme="http://luofenghan.github.io/categories/Tomcat/"/>
+      <category term="Tomcat" scheme="http://www.vibrancy.cn/categories/Tomcat/"/>
     
     
-      <category term="tomcat" scheme="http://luofenghan.github.io/tags/tomcat/"/>
+      <category term="tomcat" scheme="http://www.vibrancy.cn/tags/tomcat/"/>
     
   </entry>
   
