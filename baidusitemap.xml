@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>http://www.vibrancy.cn/repository/classic-sort.html</loc>
-    <lastmod>2017-05-14T00:13:13.067Z</lastmod>
-    <data>
-        <display>
-        <title>8大经典排序算法总结</title>
-        <pubTime>2017-05-14T00:08:29.000Z</pubTime>
-        
-        <tag>8大排序算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://www.vibrancy.cn/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.vibrancy.cn/repository/Java8%20HashMap%20principle%20analysis.html</loc>
-    <lastmod>2017-05-04T01:09:51.891Z</lastmod>
+    <lastmod>2017-05-14T00:34:52.072Z</lastmod>
     <data>
         <display>
         <title>Java8 HashMap原理分析</title>
@@ -51,7 +31,7 @@
     
   <url>
     <loc>http://www.vibrancy.cn/repository/Tomcat%20multi-instance%20single%20application%20deployment%20plan.html</loc>
-    <lastmod>2017-04-30T23:10:26.309Z</lastmod>
+    <lastmod>2017-05-14T00:34:18.948Z</lastmod>
     <data>
         <display>
         <title>Tomcat多实例单应用部署方案</title>
@@ -70,8 +50,30 @@
 
     
   <url>
+    <loc>http://www.vibrancy.cn/repository/android%20incremental%20update(server%20articles).html</loc>
+    <lastmod>2017-05-14T00:34:18.905Z</lastmod>
+    <data>
+        <display>
+        <title>Android增量更新：服务器篇</title>
+        <pubTime>2017-04-30T13:40:21.000Z</pubTime>
+        
+        <tag>增量更新</tag>
+         
+        <tag>android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.vibrancy.cn/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.vibrancy.cn/repository/when%20to%20use%20MQ%20.html</loc>
-    <lastmod>2017-04-30T23:08:29.954Z</lastmod>
+    <lastmod>2017-05-14T00:34:18.795Z</lastmod>
     <data>
         <display>
         <title>到底什么时候该使用MQ</title>
@@ -92,21 +94,19 @@
 
     
   <url>
-    <loc>http://www.vibrancy.cn/repository/android%20incremental%20update(server%20articles).html</loc>
-    <lastmod>2017-04-30T23:08:03.147Z</lastmod>
+    <loc>http://www.vibrancy.cn/repository/classic-sort.html</loc>
+    <lastmod>2017-05-14T00:29:10.597Z</lastmod>
     <data>
         <display>
-        <title>Android增量更新：服务器篇</title>
-        <pubTime>2017-04-30T13:40:21.000Z</pubTime>
+        <title>8大经典排序算法总结</title>
+        <pubTime>2017-05-14T00:08:29.000Z</pubTime>
         
-        <tag>增量更新</tag>
-         
-        <tag>android</tag>
+        <tag>8大排序算法</tag>
          
          
            
              
-              <breadCrumb title="Android" url="http://www.vibrancy.cn/categories/Android/"/>
+              <breadCrumb title="算法" url="http://www.vibrancy.cn/categories/%E7%AE%97%E6%B3%95/"/>
           
         </display>
     </data>
