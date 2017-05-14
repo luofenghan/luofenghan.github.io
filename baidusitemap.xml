@@ -4,60 +4,14 @@
 
     
   <url>
-    <loc>http://www.vibrancy.cn/repository/select%20sort.html</loc>
-    <lastmod>2017-05-11T04:56:16.259Z</lastmod>
+    <loc>http://www.vibrancy.cn/repository/classic-sort.html</loc>
+    <lastmod>2017-05-14T00:13:13.067Z</lastmod>
     <data>
         <display>
-        <title>选择排序</title>
-        <pubTime>2017-05-11T04:44:26.000Z</pubTime>
+        <title>8大经典排序算法总结</title>
+        <pubTime>2017-05-14T00:08:29.000Z</pubTime>
         
-        <tag>算法</tag>
-         
-        <tag>选择排序</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://www.vibrancy.cn/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.vibrancy.cn/repository/swap%20sort.html</loc>
-    <lastmod>2017-05-11T04:54:58.723Z</lastmod>
-    <data>
-        <display>
-        <title>交换排序</title>
-        <pubTime>2017-05-11T04:45:27.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>交换排序</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://www.vibrancy.cn/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.vibrancy.cn/repository/insert%20sort.html</loc>
-    <lastmod>2017-05-11T04:53:52.621Z</lastmod>
-    <data>
-        <display>
-        <title>插入排序</title>
-        <pubTime>2017-05-11T04:40:59.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>插入排序</tag>
+        <tag>8大排序算法</tag>
          
          
            

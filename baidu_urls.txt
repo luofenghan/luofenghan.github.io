@@ -1,6 +1,4 @@
-http://www.vibrancy.cn/repository/swap sort.html
-http://www.vibrancy.cn/repository/select sort.html
-http://www.vibrancy.cn/repository/insert sort.html
+http://www.vibrancy.cn/repository/classic-sort.html
 http://www.vibrancy.cn/repository/Java8 HashMap principle analysis.html
 http://www.vibrancy.cn/repository/android incremental update(server articles).html
 http://www.vibrancy.cn/repository/when to use MQ .html
