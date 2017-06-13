@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.vibrancy.cn/repository/classic-sort.html</loc>
+    
+    <lastmod>2017-06-13T11:49:58.542Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.vibrancy.cn/repository/multi-thread-knowledge-self-concurrent-basic-theory.html</loc>
     
     <lastmod>2017-06-13T11:25:32.605Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://www.vibrancy.cn/repository/Tomcat-multi-instance-single-application-deployment-plan.html</loc>
     
     <lastmod>2017-05-15T11:56:10.704Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.vibrancy.cn/repository/classic-sort.html</loc>
-    
-    <lastmod>2017-05-15T11:56:10.659Z</lastmod>
     
   </url>
   

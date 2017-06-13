@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.vibrancy.cn/repository/classic-sort.html</loc>
+    <lastmod>2017-06-13T11:49:58.542Z</lastmod>
+    <data>
+        <display>
+        <title>8大经典排序算法总结</title>
+        <pubTime>2017-05-14T00:08:29.000Z</pubTime>
+        
+        <tag>8大排序算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://www.vibrancy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.vibrancy.cn/repository/multi-thread-knowledge-self-concurrent-basic-theory.html</loc>
     <lastmod>2017-06-13T11:25:32.605Z</lastmod>
     <data>
@@ -39,26 +59,6 @@
            
              
               <breadCrumb title="Tomcat" url="http://www.vibrancy.cn/categories/Tomcat/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.vibrancy.cn/repository/classic-sort.html</loc>
-    <lastmod>2017-05-15T11:56:10.659Z</lastmod>
-    <data>
-        <display>
-        <title>8大经典排序算法总结</title>
-        <pubTime>2017-05-14T00:08:29.000Z</pubTime>
-        
-        <tag>8大排序算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://www.vibrancy.cn/categories/%E7%AE%97%E6%B3%95/"/>
           
         </display>
     </data>
