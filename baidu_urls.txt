@@ -1,5 +1,6 @@
+http://www.vibrancy.cn/repository/multi-thread-knowledge-self-concurrent-basic-theory.html
 http://www.vibrancy.cn/repository/classic-sort.html
-http://www.vibrancy.cn/repository/Java8 HashMap principle analysis.html
-http://www.vibrancy.cn/repository/android incremental update(server articles).html
-http://www.vibrancy.cn/repository/when to use MQ .html
-http://www.vibrancy.cn/repository/Tomcat multi-instance single application deployment plan.html
+http://www.vibrancy.cn/repository/java8-HashMap-principle-analysis.html
+http://www.vibrancy.cn/repository/android-incremental-update-server-articles.html
+http://www.vibrancy.cn/repository/when-to-use-MQ .html
+http://www.vibrancy.cn/repository/Tomcat-multi-instance-single-application-deployment-plan.html
