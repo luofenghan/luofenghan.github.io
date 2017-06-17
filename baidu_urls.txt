@@ -1,3 +1,4 @@
+http://www.vibrancy.cn/repository/jvm-knowledge-self-gc.html
 http://www.vibrancy.cn/repository/jvm-knowledge-self-java-memory-area.html
 http://www.vibrancy.cn/repository/multi-thread-knowledge-self-concurrent-basic-theory.html
 http://www.vibrancy.cn/repository/classic-sort.html
