@@ -4,6 +4,54 @@
 
     
   <url>
+    <loc>http://www.vibrancy.cn/repository/jvm-knowledge-self-class-loading.html</loc>
+    <lastmod>2017-06-17T12:44:06.561Z</lastmod>
+    <data>
+        <display>
+        <title>jvm-knowledge-self-class-loading</title>
+        <pubTime>2017-06-17T12:36:33.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>jvm</tag>
+         
+        <tag>类加载</tag>
+         
+         
+           
+             
+              <breadCrumb title="jvm" url="http://www.vibrancy.cn/categories/jvm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.vibrancy.cn/repository/jvm-knowledge-self-java-memory-area.html</loc>
+    <lastmod>2017-06-17T11:14:08.748Z</lastmod>
+    <data>
+        <display>
+        <title>JVM知识自查表——Java内存区域</title>
+        <pubTime>2017-06-17T09:36:44.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>jvm</tag>
+         
+        <tag>运行时数据区</tag>
+         
+         
+           
+             
+              <breadCrumb title="jvm" url="http://www.vibrancy.cn/categories/jvm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.vibrancy.cn/repository/jvm-knowledge-self-gc.html</loc>
     <lastmod>2017-06-17T10:56:29.897Z</lastmod>
     <data>
@@ -18,30 +66,6 @@
         <tag>垃圾回收算法</tag>
          
         <tag>垃圾收集器</tag>
-         
-         
-           
-             
-              <breadCrumb title="jvm" url="http://www.vibrancy.cn/categories/jvm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.vibrancy.cn/repository/jvm-knowledge-self-java-memory-area.html</loc>
-    <lastmod>2017-06-17T10:04:52.727Z</lastmod>
-    <data>
-        <display>
-        <title>JVM知识自查表——Java内存区域</title>
-        <pubTime>2017-06-17T09:36:44.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-        <tag>jvm</tag>
-         
-        <tag>运行时数据区</tag>
          
          
            
