@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://www.vibrancy.cn/repository/jvm-knowledge-self-java-memory-area.html</loc>
+    <lastmod>2017-06-17T09:48:01.694Z</lastmod>
+    <data>
+        <display>
+        <title>JVM知识自查表——Java内存区域</title>
+        <pubTime>2017-06-17T09:36:44.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>jvm</tag>
+         
+        <tag>运行时数据区</tag>
+         
+         
+           
+             
+              <breadCrumb title="jvm" url="http://www.vibrancy.cn/categories/jvm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.vibrancy.cn/repository/classic-sort.html</loc>
     <lastmod>2017-06-13T11:49:58.542Z</lastmod>
     <data>
