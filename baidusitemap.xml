@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://www.vibrancy.cn/repository/multi-thread-knowledge-self-concurrent-structured-concurrent-application.html</loc>
+    <lastmod>2017-06-18T08:59:54.239Z</lastmod>
+    <data>
+        <display>
+        <title>多线程知识自查表——结构化并发应用程序</title>
+        <pubTime>2017-06-18T07:52:48.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>多线程</tag>
+         
+         
+           
+             
+              <breadCrumb title="多线程" url="http://www.vibrancy.cn/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.vibrancy.cn/repository/jvm-knowledge-self-class-loading.html</loc>
     <lastmod>2017-06-17T12:57:27.394Z</lastmod>
     <data>
