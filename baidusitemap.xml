@@ -30,32 +30,6 @@
 
     
   <url>
-    <loc>http://www.vibrancy.cn/repository/hadoop-rpc.html</loc>
-    <lastmod>2017-06-19T07:31:44.562Z</lastmod>
-    <data>
-        <display>
-        <title>Hadoop中的远程过程调用</title>
-        <pubTime>2017-06-19T05:03:50.000Z</pubTime>
-        
-        <tag>hadoop</tag>
-         
-        <tag>rpc</tag>
-         
-        <tag>动态代理</tag>
-         
-        <tag>NIO</tag>
-         
-         
-           
-             
-              <breadCrumb title="hadoop" url="http://www.vibrancy.cn/categories/hadoop/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.vibrancy.cn/repository/multi-thread-knowledge-self-concurrent-structured-concurrent-application.html</loc>
     <lastmod>2017-06-18T09:03:27.129Z</lastmod>
     <data>
